@@ -168,6 +168,7 @@ export default {
       bus.$emit('msg.success', 'Clear Inspector success!')
     },
     saveSelectedFlow ({ state, commit, dispatch }) {
+      console.info('state:' + state)
       api.saveSelectedFlow(state.selectedIds)
         .then(response => {
           bus.$emit('msg.success', state.selectedIds.length + ' flow saved!')

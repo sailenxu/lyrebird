@@ -256,7 +256,7 @@ export default {
   },
   methods: {
     showMockDataSelector () {
-      this.$refs.treeDrawer.toggal()
+      this.$refs.treeDrawer.toggal()//打开mock分组
     },
     changeFlowFilter () {
       this.$store.dispatch('loadFlowList')
@@ -271,6 +271,7 @@ export default {
       this.$store.commit('setSearchStr', '')
     },
     saveSelectedFlow () {
+      //保存请求
       if (Object.keys(this.activatedGroups).length <= 0) {
         this.$bus.$emit('msg.info', 'Select a mock group')
         this.showMockDataSelector()
