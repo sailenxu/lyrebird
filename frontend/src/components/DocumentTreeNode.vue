@@ -9,7 +9,7 @@
       @click="onTreeNodeClick"
     >
 
-      <span>
+      <span class="span11">
         <v-btn v-if="data.type === 'group'" icon class="mr-1 my-0" @click.stop="onToggleStatusChange">
           <v-icon small :color="toggleColor" :class="toggleClass">
             {{ isLoading ? 'mdi-autorenew': 'mdi-chevron-down' }}
@@ -20,7 +20,7 @@
         <v-icon v-else small :color="iconColor" size="14px" class="mr-1">mdi-file</v-icon>
       </span>
 
-      <span>
+      <span class="span22">
         <div class="status-point" v-show="isGroupActivated"/>
         <span :class="nameClass">
           <span v-if="data.parent_id">{{data.name}}</span>
@@ -35,8 +35,7 @@
 
       <v-spacer/>
 
-      <span v-show="isMouseOver && !isSelectableStatus">
-
+      <span class="span33" v-show="isMouseOver && !isSelectableStatus">
         <v-btn
           v-show="data.type==='group'"
           icon
@@ -127,9 +126,11 @@ export default {
       return this.data.link ? 'text--secondary' : 'accent'
     },
     isSelectableStatus () {
+      console.info('isSelectableStatus:' + this.$store.state.dataManager.isSelectableStatus)
       return this.$store.state.dataManager.isSelectableStatus
     },
     isGroupActivated () {
+      console.info('data.id:' + this.data.id)
       return this.$store.state.inspector.activatedGroup.hasOwnProperty(this.data.id)
     },
     isNodeFocused () {
@@ -227,9 +228,11 @@ export default {
       } else { }
     },
     onTreeNodeActivate () {
+      console.info('onTreeNodeActivate')
       this.$store.dispatch('activateGroup', this.data)
     },
     onTreeNodeDeactivate () {
+      console.info('onTreeNodeDeactivate')
       this.$store.dispatch('deactivateGroup')
     }
   }

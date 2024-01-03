@@ -53,6 +53,29 @@ lyrebird gen /your/workspace/path
 └── setup.py
 
 ```
+前端页面结构：
+```
+.
+├── Inspector 录制页面
+│   ├── ButtonBar 上部按钮
+│   ├── TempMockDrawer mock分组弹窗
+│   │   ├── TempMockTree 临时mock分组树
+│   │   ├── DocumentTree mock分组的树
+│   │   │   └── DocumentTreeNode mock分组树
+│   └── FlowList 流量列表
+
+```
+后端接口结构：
+```
+.
+├── mock
+│   ├── blueprints
+│   │   ├── apis
+│   │   │   └── flow 流量操作（保存、删除）
+│   │   │   └── mock mock数据操作（启动、修改）
+
+```
+
 
 ## 构建项目
 

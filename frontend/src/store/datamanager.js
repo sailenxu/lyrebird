@@ -232,6 +232,7 @@ export default {
         setTimeout(() => {
           commit('setIsLoading', true)
           commit('setGroupListOpenNode', [])
+          console.info('isLoadTreeAsync:' + state.isLoadTreeAsync)
           if (state.isLoadTreeAsync) {
             api.getGroupMap({labels: state.dataListSelectedLabel})
               .then(response => {

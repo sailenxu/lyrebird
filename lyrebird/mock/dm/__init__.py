@@ -416,7 +416,7 @@ class DataManager:
 
     def deactivate(self):
         """
-        Clear activated data
+        Clear activated data所有激活的mock全部清理掉
         """
         config = self._get_activated_data_config()
         if config:

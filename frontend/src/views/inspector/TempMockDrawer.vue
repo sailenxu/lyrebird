@@ -40,6 +40,7 @@ export default {
   },
   computed: {
     treeData () {
+      console.info('tree.data:' + this.$store.state.dataManager.treeData)
       return this.$store.state.dataManager.treeData
     },
     temporaryMockDataList () {
